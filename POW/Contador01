@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contados 0.0</title>
+    </head>
+    <body>
+        <style>
+            *{
+                font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            }
+            .container{
+                /*centrado del contenido*/
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                height: 90vh;
+            }
+            /*#contador{
+                font-weight: 500px;
+            }*/
 
+            /*Recuadro del contador*/
+            .contador{
+                background-color: rgb(136, 187, 187);
+                margin: 220px;
+                border-radius: 15px;
+                padding: 20px;   
+            }
+        /*botones de incremento y decremento*/    
+        </style>
+        <div class = "container">
+            <div class="contador">
+                <h2>CONTADOR</h2>
+                
+                <div id="contador">0</div>
+                
+                <div class="botones">
+                    <button id="Restar">Restar</button>
+                    <button id="Incremento">Incrementar</button>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            /*incrementar y restar*/
+            let contador = 0;
+            const incrementar = document.getElementById('Incremento')
+            const restar = document.getElementById('Restar')
+            const numero = document.getElementById('contador')
+
+            incrementar.addEventListener('click', () => {
+                contador++
+                numero.innerHTML=contador //actualiza la pantalal del contador
+                if (contador>10) {
+                    alert('Limite 10 Positivo alcanzado')
+                    contador = 0; //resetea
+                    numero.innerHTML = contador; //actualiza el contador a cero (0)
+                }
+            })
+
+            restar.addEventListener('click', () => {
+                contador--
+                numero.innerHTML=contador
+                if (contador<-10) {
+                    alert('Limite 10 Negativo alcanzado')
+                    contador = 0; //resetea
+                    numero.innerHTML = contador; //actualiza el contador a cero (0)
+                }
+            })
+        </script>
+    </body>
+</html>
